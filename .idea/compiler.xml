@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Decorator" />
+        <module name="Iterator" />
+        <module name="Observer" />
+        <module name="Proxy" />
+        <module name="Strategy" />
+        <module name="Template" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Decorator" target="1.5" />
+      <module name="DesignPattern" target="1.5" />
+      <module name="Iterator" target="1.5" />
+      <module name="Observer" target="1.5" />
+      <module name="Proxy" target="1.5" />
+      <module name="Strategy" target="1.5" />
+      <module name="Template" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

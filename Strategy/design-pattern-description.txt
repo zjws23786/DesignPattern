@@ -1,0 +1,57 @@
+策略模式设计
+
+设计模式的本质目的是使软件工程在维护性、扩展性、变化性、复杂度方面成O(N)
+举个例子：模拟鸭子项目
+第一种方式：
+1、从OO的角度设计这个项目,鸭子超类，扩展超类：
+    public abstract class Duck {
+        public void Quack() {
+            System.out.println("~~gaga~~");
+        }
+        public abstract void display();
+        public void swim() {
+            System.out.println("~~im swim~~");
+        }
+    }
+1.1、GreenHeadDuck继承Duck ：
+public class GreenHeadDuck extends Duck {
+	@Override
+	public void display() {
+		System.out.println("**GreenHead**");
+	}
+}
+同理可有RedHeadDuck等
+
+2、添加会飞的鸭子新需求
+OO思维里的继承方式解决方案是：
+    public abstract class Duck {
+            ...;
+            public void Fly() {
+            System.out.println("~~im fly~~");
+        }
+    }
+问题来了,这个Fly让所有子类都会飞了，这是不科学的。
+缺点就很明显了：继承的问题：对类的局部改动，尤其超类的局部改动，会影响其他部分。影响会有溢出效应
+
+2.1、继续尝试用OO原理来解决，覆盖：
+    public class GreenHeadDuck extends Duck {
+    ...；
+    public void Fly() {
+    		System.out.println("~~no fly~~");
+    	}
+    }
+
+超类挖的一个坑，每个子类都要来填，增加工作量，复杂度O(N^2)。不是好的设计方式
+
+第二种方式：接口+实现（用策略模式来新需求解决）
+    1）分析项目变化与不变部分，提取变化部分，抽象成接口+实现；
+	2）鸭子哪些功能是会根据新需求变化的？叫声、飞行...
+
+	实现看具体代码
+
+	好处：新增行为简单，行为类更好的复用，组合更方便。既有继承带来的复用好处，没有挖坑
+
+总结一下：
+    策略模式：分别封装行为接口，实现算法族，超类（或基类）里放入行为接口对象，在子类中具体定义行为对象。
+    原则：分离变化部分，封装接口，基于接口编程各种功能。此模式让行为算法的变化独立于算法的使用者
+

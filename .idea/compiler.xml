@@ -10,6 +10,7 @@
         <module name="Iterator" />
         <module name="Observer" />
         <module name="Proxy" />
+        <module name="Singleton" />
         <module name="Strategy" />
         <module name="Template" />
       </profile>
@@ -20,6 +21,7 @@
       <module name="Iterator" target="1.5" />
       <module name="Observer" target="1.5" />
       <module name="Proxy" target="1.5" />
+      <module name="Singleton" target="1.5" />
       <module name="Strategy" target="1.5" />
       <module name="Template" target="1.5" />
     </bytecodeTargetLevel>
